@@ -34,7 +34,7 @@ exports.deleteMovie = async (req, res) => {
 		const movie = await Movie.findOneAndRemove({ _id: req.params.id });
 		return res.json({ _id: movie.id });
 	} catch (e) {
-		return res.status(e.status || 422).json(e.response.data);
+		return res.status(e.status || 422).json(e.response);
 	}
 };
 exports.updateMovie = async (req, res) => {
